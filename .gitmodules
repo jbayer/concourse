@@ -9,7 +9,7 @@
 [submodule "src/github.com/concourse/atc"]
 	path = src/github.com/concourse/atc
 	url = https://github.com/concourse/atc
-	branch = master
+	branch = yeller-spike
 [submodule "src/github.com/lib/pq"]
 	path = src/github.com/lib/pq
 	url = https://github.com/lib/pq
@@ -112,13 +112,17 @@
 	branch = master
 [submodule "src/github.com/concourse/gate"]
 	path = src/github.com/concourse/gate
-	url = git@github.com:concourse/gate.git
-	branch = master
-[submodule "src/github.com/gogo/protobuf"]
-	path = src/github.com/gogo/protobuf
-	url = https://github.com/gogo/protobuf
+	url = https://github.com/concourse/gate
 	branch = master
 [submodule "src/github.com/vito/clock"]
 	path = src/github.com/vito/clock
 	url = git@github.com:vito/clock.git
+	branch = master
+[submodule "src/github.com/xoebus/zest"]
+	path = src/github.com/xoebus/zest
+	url = https://github.com/xoebus/zest
+	branch = master
+[submodule "src/github.com/yeller/yeller-golang"]
+	path = src/github.com/yeller/yeller-golang
+	url = https://github.com/yeller/yeller-golang
 	branch = master
