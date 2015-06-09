@@ -13,6 +13,12 @@
       "Type": "String"
     },
 
+    "BOSHInboundCIDR": {
+      "Description": "CIDR to permit access to BOSH (e.g. 205.103.216.37/32 for your specific IP)",
+      "Type": "String",
+      "Default": "0.0.0.0/0"
+    },
+
     "VPCCIDR": {
       "Description": "CIDR block for the VPC.",
       "Type": "String",
@@ -79,15 +85,33 @@
         "SecurityGroupEgress": [],
         "SecurityGroupIngress": [
           {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
+            "CidrIp": { "Ref": "BOSHInboundCIDR" },
             "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22"
+          },
+          {
+            "CidrIp": { "Ref": "BOSHInboundCIDR" },
+            "IpProtocol": "tcp",
+            "FromPort": "6868",
+            "ToPort": "6868"
+          },
+          {
+            "CidrIp": { "Ref": "BOSHInboundCIDR" },
+            "IpProtocol": "tcp",
+            "FromPort": "25555",
+            "ToPort": "25555"
+          },
+          {
+            "SourceSecurityGroupId": { "Ref": "InternalSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
             "ToPort": "65535"
           },
           {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
+            "SourceSecurityGroupId": { "Ref": "InternalSecurityGroup" },
             "IpProtocol": "udp",
+            "FromPort": "0",
             "ToPort": "65535"
           }
         ]
@@ -103,14 +127,14 @@
         "SecurityGroupIngress": [
           {
             "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
             "IpProtocol": "tcp",
+            "FromPort": "0",
             "ToPort": "65535"
           },
           {
             "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
             "IpProtocol": "udp",
+            "FromPort": "0",
             "ToPort": "65535"
           }
         ]
@@ -126,43 +150,43 @@
         "SecurityGroupIngress": [
           {
             "CidrIp": "0.0.0.0/0",
-            "FromPort": "80",
             "IpProtocol": "tcp",
+            "FromPort": "80",
             "ToPort": "80"
           },
           {
             "CidrIp": "0.0.0.0/0",
-            "FromPort": "2222",
             "IpProtocol": "tcp",
+            "FromPort": "2222",
             "ToPort": "2222"
           },
           {
             "CidrIp": "0.0.0.0/0",
-            "FromPort": "443",
             "IpProtocol": "tcp",
+            "FromPort": "443",
             "ToPort": "443"
           }
         ]
       }
     },
 
-    "OpenSecurityGroup": {
+    "NATSecurityGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "VpcId": { "Ref": "VPC" },
-        "GroupDescription": "Open",
+        "GroupDescription": "NAT",
         "SecurityGroupEgress": [],
         "SecurityGroupIngress": [
           {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
+            "SourceSecurityGroupId": { "Ref": "InternalSecurityGroup" },
             "IpProtocol": "tcp",
+            "FromPort": "0",
             "ToPort": "65535"
           },
           {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "0",
+            "SourceSecurityGroupId": { "Ref": "InternalSecurityGroup" },
             "IpProtocol": "udp",
+            "FromPort": "0",
             "ToPort": "65535"
           }
         ]
@@ -210,7 +234,7 @@
           "Fn::FindInMap": ["AWSNATAMI", { "Ref" : "AWS::Region" }, "AMI"]
         },
         "KeyName": "bosh",
-        "SecurityGroupIds": [{ "Ref": "OpenSecurityGroup" }],
+        "SecurityGroupIds": [{ "Ref": "NATSecurityGroup" }],
         "SourceDestCheck": false,
         "Tags": [{ "Key": "Name", "Value": "NAT" }]
       }
@@ -227,6 +251,7 @@
     "InternalSubnet": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
+        "AvailabilityZone": { "Fn::Select": ["0", { "Fn::GetAZs": { "Ref" : "AWS::Region" } }] },
         "CidrBlock": { "Ref": "InternalSubnetCIDR" },
         "VpcId": { "Ref": "VPC" },
         "Tags": [{ "Key": "Name", "Value": "Internal" }]
@@ -259,6 +284,7 @@
     "LoadBalancerSubnet": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
+        "AvailabilityZone": { "Fn::Select": ["0", { "Fn::GetAZs": { "Ref" : "AWS::Region" } }] },
         "CidrBlock": { "Ref": "LoadBalancerSubnetCIDR" },
         "VpcId": { "Ref": "VPC" },
         "Tags": [{ "Key": "Name", "Value": "LoadBalancer" }]

@@ -156,7 +156,7 @@
 	branch = master
 [submodule "src/github.com/concourse/jettison"]
 	path = src/github.com/concourse/jettison
-	url = https://github.com/concourse/jettison.git
+	url = git@github.com:concourse/jettison.git
 	branch = master
 [submodule "src/github.com/cloudfoundry/gunk"]
 	path = src/github.com/cloudfoundry/gunk
@@ -165,3 +165,8 @@
 [submodule "src/github.com/sclevine/agouti"]
 	path = src/github.com/sclevine/agouti
 	url = https://github.com/sclevine/agouti
+	branch = master
+[submodule "src/github.com/concourse/baggageclaim"]
+	path = src/github.com/concourse/baggageclaim
+	url = https://github.com/concourse/baggageclaim
+	branch = master

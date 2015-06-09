@@ -79,7 +79,7 @@ jobs:
   - name: db
     instances: 1
     resource_pool: databases
-    persistent_disk: 10240
+    persistent_disk_pool: database
     templates:
       - {release: concourse, name: consul-agent}
       - {release: concourse, name: postgresql}
@@ -100,6 +100,7 @@ jobs:
       - {release: concourse, name: consul-agent}
       - {release: concourse, name: groundcrew}
       - {release: garden-linux, name: garden}
+      - {release: concourse, name: mattermaster}
     networks: [{name: concourse}]
     properties:
       garden:
@@ -109,6 +110,12 @@ jobs:
       consul:
         agent:
           servers: {lan: [*discovery_static_ip]}
+
+disk_pools:
+  - name: database
+    disk_size: 10240
+    cloud_properties:
+      type: gp2
 
 resource_pools:
   - name: web
@@ -147,8 +154,11 @@ compilation:
   network: concourse
   reuse_compilation_vms: true
   cloud_properties:
-    instance_type: c3.large
+    instance_type: c4.large
     availability_zone: *az
+    ephemeral_disk:
+      size: 30000 # in MB
+      type: gp2
 
 update:
   canaries: 1

@@ -4,55 +4,47 @@ postgresql/postgresql-9.3.4.tar.gz:
   sha: 9f80b3cfebc434ca0860fc8489923cea73456081
   size: 21865589
 resources/archive-resource.tar.gz:
-  object_id: c3ccf92b-bb6b-4fe9-b1c8-3761c7118ba2
-  sha: !binary |-
-    MjNlN2NiY2I4ZjkzNTliMWI3ZmE4NDlmNTBmNGNhYmQ4OTBmMDBiMg==
-  size: 2549624
+  object_id: a9d03488-fe6c-44c6-a815-d0b76d7afe17
+  sha: 0de892fc7361f362ad7e841fca8542fcfa0785d0
+  size: 9647998
 resources/time-resource.tar.gz:
-  object_id: 1eab47f9-4697-49ed-81be-b4ceda1dfa9c
-  sha: !binary |-
-    ZTkwMzdhMmJiMTkyN2M5OTBiOWY2MmRmNTJiYTUxMTQ2ZmQxMWY3Nw==
-  size: 2524048
+  object_id: 860dd863-312c-4a31-8db3-a26f4d92edea
+  sha: 6807d2227e2cfa51ec61bacf2e7d6a7d8333455a
+  size: 2524039
 resources/semver-resource.tar.gz:
-  object_id: 920b5da3-1a36-478f-b444-191cf993518d
+  object_id: 693ff164-b24d-4a09-87a5-e581adb45851
   sha: !binary |-
-    N2E5MDMxZmNiN2YxMTM3NjY2NThmYWEyOTk3YmU0Yzk0MGMyMDI0OQ==
-  size: 8644937
+    ZjI0YWM0ZjQ1ZWYwNzA5Y2I5MzRkODVjYWZmYzVjODUxYjlmYzA0Mg==
+  size: 8903462
 resources/s3-resource.tar.gz:
-  object_id: 8a30e269-a995-4dc3-a20d-70b8cdb20153
+  object_id: a0d6b517-3000-423b-ac09-54b9bd3b3298
   sha: !binary |-
-    MDcxMzBlNDgzYWM3NGM3OTRiNjIwZWU4OTdiNmEwNzQ3NWZkMTU3ZQ==
-  size: 8840019
+    NTAwMzViNDg2YjRlYzdjOTdmM2Q2ODA4YTY0Y2M1N2UxZDAxYTlkYw==
+  size: 9693478
 resources/tracker-resource.tar.gz:
-  object_id: 9ad7a288-6a9d-4476-8032-7e1333e23fa4
-  sha: !binary |-
-    YjFjYjM3NmNhNjY3MjU1YjdlMDlkOThjZTgzMjgwMWY3YzNjNWFiNA==
-  size: 9882086
+  object_id: f1c43153-4eb9-4590-a7ae-2da9497e0368
+  sha: 7a6bcb28628df772e3fa7408619e8f378d27c1d8
+  size: 11655491
 resources/git-resource.tar.gz:
-  object_id: 3cd44e0e-ea84-47e2-9738-aa450f708b72
-  sha: !binary |-
-    NDIzMDZiYWFjNTM4OTM4MDZhMzI3ZTAwMWY2YmFmM2VkMDNmMDA0Yw==
-  size: 8411402
+  object_id: 3c86224c-18de-487f-adf2-2c54216c95b6
+  sha: bdb4c5b810a1d8d29f7c69184c513a2ea7febdec
+  size: 8410592
 resources/docker-image-resource.tar.gz:
-  object_id: b3f1c818-7e9a-4a34-b527-38deb66b6f5c
-  sha: !binary |-
-    NzFkODlkNmM5NzQ0ODg3ZDM0NWMzN2I1NWNjN2I2N2Y2Nzk1YWEzZQ==
-  size: 8277135
+  object_id: de2495bb-84c2-4430-a633-e2fdc2369a70
+  sha: 9354b89adedc628ccfa4e31324a42a05e8b98f03
+  size: 8389788
 resources/vagrant-cloud-resource.tar.gz:
-  object_id: ba9762cd-b2bd-4f55-b610-2e2bb87f6f6d
-  sha: !binary |-
-    ODhlMDg2OTRhNzkzMzkxMDg0ZTdlZjA5MTBiZGNmZjRjYjllZDM0Yw==
-  size: 8409175
+  object_id: 7a929a84-d9bf-48a9-8116-0f5f09ef4139
+  sha: 8cce6b8e772a5e80f25119304309d6c77e0cb844
+  size: 8409188
 resources/cf-resource.tar.gz:
-  object_id: 45d839b5-de52-4705-9247-51c92bc135df
-  sha: !binary |-
-    MGMyMzY2M2RjMjA4N2Q3MjBiN2U3NzRlYzk0YWEyY2Y5MDMzOWQ5NA==
-  size: 12706331
+  object_id: 5ecbeffb-f092-49a7-94d8-77a07bef668f
+  sha: 84e1ffc7d6ddc478566970d8cc23758906f7907e
+  size: 14157021
 resources/github-release-resource.tar.gz:
-  object_id: 998f0c03-5b47-4e1a-9214-61903ecd068d
-  sha: !binary |-
-    MzE5NjViMzkyMjkwNmFlYzAwZDMzZmJkZjY4NzRiNzFhZmM2MWE5Yg==
-  size: 8835354
+  object_id: 704f07cb-2425-41ed-bb7f-c0d7402d5a04
+  sha: bcc1d1fb85d03dc527dd53fe0495ea89f70f9dd6
+  size: 8841286
 consul_0.5/consul:
   object_id: 97b99488-7553-47f0-8294-ad1f8533b164
   sha: f461a632165ce878045afaaf04de699510e53374
@@ -62,17 +54,22 @@ golang_1.4/go1.4.2.src.tar.gz:
   sha: 460caac03379f746c473814a65223397e9c9a2f6
   size: 10921896
 resources/bosh-io-stemcell-resource.tar.gz:
-  object_id: 215c153d-3505-48e1-aa01-dfcfc34130f8
-  sha: !binary |-
-    ZDUwMjEzYTU0Nzc4YmM1ODA3MDUyZGRjOTAyOTU5MTU5NDgyMjEyNQ==
-  size: 8407356
+  object_id: 6709e19c-369b-4d0d-bf25-f7d655024c9f
+  sha: ca48ae2de3a3a46c587fc5cadf3af8c754c2c248
+  size: 8407988
 resources/bosh-io-release-resource.tar.gz:
-  object_id: 2b39e0a1-bbc8-4d59-8bd0-1eb6e1d6186f
-  sha: !binary |-
-    ZmY4Y2JlZDQwZjc3NmNiZTg5ZmZlMzNmZDRjNDk0Y2UyY2ViOWVhYQ==
-  size: 8407390
+  object_id: 8b247e46-8f37-4656-bda8-9fd65d05df98
+  sha: 97258c30395e0d8cf1a7d36a715230d0ae8405ca
+  size: 8409411
 resources/bosh-deployment-resource.tar.gz:
-  object_id: 0f5386c7-d0fe-41e0-b2e8-babe5af7f76a
-  sha: !binary |-
-    YTliZDA3MzA3NWI5Y2Y1MzkyM2U2OWI1OWM5ZjIzZTBiYWVmNTk1ZQ==
-  size: 22125992
+  object_id: 7dbac0bd-1313-4bbf-9c7b-3177ebeaa194
+  sha: eedb4f855b0f2cc7aeabd5f295bbac99496565d7
+  size: 22174787
+btrfs_tools_3.12/btrfs:
+  object_id: 8a522cff-b202-43a6-8d10-7e68c473f66e
+  sha: 5d7afc7cff4e2d842dcc22129799b1329ed2e868
+  size: 353424
+btrfs_tools_3.12/mkfs.btrfs:
+  object_id: 25651d29-52e3-4441-afc0-b590ea64c410
+  sha: 80108e80d404d8fdd435703f8526ff8a44e4bbe2
+  size: 171728

@@ -1,10 +1,6 @@
-VERSION?=0.0.0
+DOCUMENTS := $(shell find $(SOURCEDIR) -name '*.any')
 
-all: install build
+all: out
 
-install:
-	raco pkg install --auto -j 4 scribble || true
-
-build:
-	raco scribble ++arg --version ++arg ${VERSION} --htmls concourse.scrbl
-
+out: $(DOCUMENTS)
+	RUBYLIB=${PWD}/lib anatomy -i concourse.any -o out

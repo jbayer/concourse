@@ -16,9 +16,6 @@ cd concourse-develop/
 
 echo v${version} > release-name
 
-raco scribble --dest-name notes.md --markdown \
-  docs/release-notes/v${version}.scrbl
-
-if [ "$STRIP_HEADER" = "true" ]; then
-  sed -i -e '1,2d' notes.md
-fi
+cat > notes.md <<EOF
+See [v${version} release notes](http://concourse.ci/release-notes.html#v${version})
+EOF
